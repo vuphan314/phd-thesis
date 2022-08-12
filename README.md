@@ -22,7 +22,7 @@
 
 ## Cloning this repository
 ```bash
-git clone https://github.com/vuphan314/PhD-thesis
+https://github.com/vuphan314/phd-thesis
 ```
 
 --------------------------------------------------------------------------------

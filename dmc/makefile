@@ -7,4 +7,4 @@ dmc: ../addmc/src/* ../addmc/Makefile
 .PHONY: clean
 
 clean:
-	rm -f dmc dmc.sif
+	rm -f dmc
