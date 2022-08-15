@@ -5,9 +5,9 @@
   - DPO solves *weighted SAT (WSAT)*, i.e., Boolean MPE.
   - DPER solves *exist-random SAT (ERSAT)*.
 - Each of these four solvers is a combination of a planner and an executor.
-  - A planner produces a **project-join tree** T from an XOR-CNF formula F.
-  - An executor traverses T to computes a solution of F.
-  - For WPMC and ERSAT, T must be **graded**.
+  - A planner produces a **project-join tree** `T` from an XOR-CNF formula F.
+  - An executor traverses `T` to computes a solution of F.
+  - For WPMC and ERSAT, `T` must be **graded**.
 - Two planners are available.
   - [HTB](./htb/) uses constraint-programming heuristics.
   - [LG](./lg/) uses tree decomposers.

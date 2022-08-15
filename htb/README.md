@@ -49,12 +49,12 @@ Usage:
 ### Finding graded join tree (for projected counting) given CNF formula from file
 #### Command
 ```bash
-./htb --cf=../examples/s27_3_2.cnf --pc=1
+./htb --cf=../examples/s27_3_2-re.cnf --pc=1
 ```
 #### Output
 ```
 c htb process:
-c pid 133981
+c pid 480107
 
 c processing CNF formula...
 
@@ -79,5 +79,5 @@ p jt 20 43 59
 59 58 e
 c ------------------------------------------------------------------
 c joinTreeWidth                 11
-c seconds                       0.002
+c seconds                       0.003
 ```

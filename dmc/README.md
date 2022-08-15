@@ -1,9 +1,9 @@
 # DMC (diagram model counter)
-Given a join tree T for an XOR-CNF formula, DMC solves:
+Given a join tree `T` for an XOR-CNF formula, DMC solves:
 - weighted model counting (WMC)
-- weighted projected model counting (WPMC); T must be graded
+- weighted projected model counting (WPMC); `T` must be graded
 - weighted SAT (WSAT), i.e., Boolean MPE
-- exist-random SAT (ERSAT); T must be graded
+- exist-random SAT (ERSAT); `T` must be graded
 
 --------------------------------------------------------------------------------
 
@@ -18,9 +18,9 @@ Given a join tree T for an XOR-CNF formula, DMC solves:
 - python3 3.8
 #### [Included libraries](../addmc/libraries/)
 - [cryptominisat 5.8](https://github.com/msoos/cryptominisat)
-- [cudd 3.0](https://github.com/ivmai/cudd)
+- [cudd 3.0](https://github.com/vuphan314/cudd)
 - [cxxopts 2.2](https://github.com/jarro2783/cxxopts)
-- [sylvan 1.5](https://github.com/trolando/sylvan)
+- [sylvan 1.5](https://github.com/vuphan314/sylvan)
 
 ### Command to build statically linked executable
 ```bash
@@ -81,32 +81,27 @@ Usage:
 ### Solving WMC given CNF formula from file and join tree from planner
 #### Command
 ```bash
-cnfFile="../examples/50-10-1-q.cnf" && ../lg/lg.sif "/solvers/flow-cutter-pace17/flow_cutter_pace17 -p 100" <$cnfFile | ./dmc --cf=$cnfFile
+cnfFile="../examples/flip_1_p_t2.cnf" && ../lg/lg.sif "/solvers/flow-cutter-pace17/flow_cutter_pace17 -p 100" <$cnfFile | ./dmc --cf=$cnfFile
 ```
 #### Output
 ```
-c processing CNF formula...
-
-c processing join tree...
-c getting join tree from stdin with 0s timer (end input with 'enter' then 'ctrl d')
-c processed join tree ending on line 272
-c joinTreeWidth                 16
-c plannerSeconds                0.0308596
+c joinTreeWidth                 4
+c plannerSeconds                0.0206429
 c getting join tree from stdin: done
-c killed planner process with pid 133234
+c killed planner process with pid 479506
 
 c computing output...
-c sliceWidth                    16
+c sliceWidth                    4
 c threadMaxMemMegabytes         4000
-c maxDiagramLeaves              16385
-c maxDiagramNodes               37888
+c maxDiagramLeaves              4
+c maxDiagramNodes               15
 c ------------------------------------------------------------------
 s SATISFIABLE
 c s type wmc
-c s log10-estimate -0.275594
-c s exact double prec-sci 0.530158
+c s log10-estimate -1.44063
+c s exact double prec-sci 0.0362549
 c ------------------------------------------------------------------
-c seconds                       0.252
+c seconds                       0.183
 ```
 
 ### Solving WPMC given CNF formula from file and graded join tree from file
@@ -116,11 +111,6 @@ c seconds                       0.252
 ```
 #### Output
 ```
-c processing CNF formula...
-
-c processing join tree...
-c getting join tree from stdin with 0s timer (end input with 'enter' then 'ctrl d')
-c processed join tree ending on line 32
 c joinTreeWidth                 2
 c plannerSeconds                0
 c getting join tree from stdin: done
@@ -132,73 +122,63 @@ c maxDiagramLeaves              2
 c maxDiagramNodes               5
 c ------------------------------------------------------------------
 s SATISFIABLE
-c s type pmc
+c s type pwmc
 c s log10-estimate -0.39794
 c s exact double prec-sci 0.4
 c ------------------------------------------------------------------
-c seconds                       0.025
+c seconds                       0.029
 ```
 
 ### Solving WSAT given XOR-CNF formula from file and join tree from planner
 #### Command
 ```bash
-cnfFile="../examples/chain_n100_k10.xcnf" && ../lg/lg.sif "/solvers/flow-cutter-pace17/flow_cutter_pace17 -p 100" <$cnfFile | ./dmc --cf=$cnfFile --er=1 --lc=1 --mf=2
+cnfFile="../examples/chain_k10_n20.xcnf" && ../lg/lg.sif "/solvers/flow-cutter-pace17/flow_cutter_pace17 -p 100" <$cnfFile | ./dmc --cf=$cnfFile --er=1 --lc=1 --mf=1
 ```
 #### Output
 ```
-c processing CNF formula...
-
-c processing join tree...
-c getting join tree from stdin with 0s timer (end input with 'enter' then 'ctrl d')
-c processed join tree ending on line 99
 c joinTreeWidth                 10
-c plannerSeconds                0.0240153
+c plannerSeconds                0.0205073
 c getting join tree from stdin: done
-c killed planner process with pid 133419
+c killed planner process with pid 479747
 
 c computing output...
 c sliceWidth                    10
 c threadMaxMemMegabytes         4000
-c maxDiagramLeaves              9
-c maxDiagramNodes               106
+c maxDiagramLeaves              8
+c maxDiagramNodes               76
 c ------------------------------------------------------------------
 s SATISFIABLE
-c s type wmc
-c s log10-estimate -20.6049
-c s exact double prec-sci 2.4835e-21
+c s type maximum
+c s log10-estimate 38
+c s exact double prec-sci 1e+38
 c ------------------------------------------------------------------
-v 1 -2 3 4 5 6 7 8 -9 -10 11 -12 13 14 15 16 17 18 -19 -20 21 -22 -23 -24 -25 26 -27 -28 29 30 31 32 -33 -34 35 -36 37 -38 -39 -40 41 42 -43 -44 45 46 -47 -48 49 50 51 -52 -53 -54 55 -56 57 -58 59 60 -61 62 -63 64 -65 66 67 -68 69 70 71 72 73 -74 75 76 77 -78 -79 80 -81 -82 -83 84 -85 -86 87 -88 89 90 -91 -92 93 -94 95 96 97 -98 -99 -100
-c seconds                       0.206
+v 00000111001010001110
+c seconds                       0.189
 ```
 
 ### Solving ERSAT given CNF formula from file and graded join tree from planner
 #### Command
 ```bash
-cnfFile="../examples/blasted_case206.cnf" && ../lg/lg.sif "/solvers/flow-cutter-pace17/flow_cutter_pace17 -p 100" <$cnfFile | ./dmc --cf=$cnfFile --pc=1 --er=1 --mf=1
+cnfFile="../examples/s27_3_2-er.cnf" && ../lg/lg.sif "/solvers/flow-cutter-pace17/flow_cutter_pace17 -p 100" <$cnfFile | ./dmc --cf=$cnfFile --pc=1 --er=1 --mf=1
 ```
 #### Output
 ```
-c processing CNF formula...
-
-c processing join tree...
-c getting join tree from stdin with 0s timer (end input with 'enter' then 'ctrl d')
-c processed join tree ending on line 16
-c joinTreeWidth                 7
-c plannerSeconds                0.01757
+c joinTreeWidth                 4
+c plannerSeconds                0.0207061
 c getting join tree from stdin: done
-c killed planner process with pid 133585
+c killed planner process with pid 479923
 
 c computing output...
-c sliceWidth                    7
+c sliceWidth                    4
 c threadMaxMemMegabytes         4000
 c maxDiagramLeaves              6
-c maxDiagramNodes               37
+c maxDiagramNodes               15
 c ------------------------------------------------------------------
 s SATISFIABLE
-c s type pmc
-c s log10-estimate -1.46143
-c s exact double prec-sci 0.03456
+c s type maximum
+c s log10-estimate -0.74136
+c s exact double prec-sci 0.181401
 c ------------------------------------------------------------------
-v 11111110110101
-c seconds                       0.173
+v 11111111110010001111
+c seconds                       0.18
 ```

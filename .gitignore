@@ -9,6 +9,11 @@ lg/build
 lg/solvers/flow-cutter-pace17/flow_cutter_pace17
 lg/solvers/htd-master/build
 
+eval/benchmarks*
+eval/bin*
+eval/data*
+eval/tempdir/
+
 __pycache__
 *.pyc
 

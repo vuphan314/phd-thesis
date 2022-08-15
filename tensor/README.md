@@ -15,17 +15,16 @@ sudo make
 
 Once built, example usage is:
 ```bash
-cnfFile="../examples/50-10-1-q.cnf" && ../lg/lg.sif "/solvers/flow-cutter-pace17/flow_cutter_pace17 -p 100" <$cnfFile | ./tensor.sif --formula=$cnfFile --timeout=100
+cnfFile="../examples/flip_1_p_t2.cnf" && ../lg/lg.sif "/solvers/flow-cutter-pace17/flow_cutter_pace17 -p 100" <$cnfFile | ./tensor.sif --formula=$cnfFile --timeout=100
 ```
 
 Output:
 ```
-Parsed join tree with tensor width 16
-Join Tree Time: 0.0211584
-Tree decomposition stream ended.
-Count: 0.5330335096711298
-Parse Formula Time: 0.002299070358276367
-Parse Join Tree Time: 0.006467103958129883
-Execution Time: 0.09494352340698242
-Total Time: 0.1037135124206543
+Parsed join tree with tensor width 5
+Join Tree Time: 0.011701
+Count: 0.0062255859375
+Parse Formula Time: 0.00017690658569335938
+Parse Join Tree Time: 0.00038242340087890625
+Execution Time: 0.004231691360473633
+Total Time: 0.004794120788574219
 ````
