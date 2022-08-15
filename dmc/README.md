@@ -2,7 +2,7 @@
 Given a join tree `T` for an XOR-CNF formula, DMC solves:
 - weighted model counting (WMC)
 - weighted projected model counting (WPMC); `T` must be graded
-- weighted SAT (WSAT), i.e., Boolean MPE
+- weighted SAT (WSAT), also called Boolean MPE
 - exist-random SAT (ERSAT); `T` must be graded
 
 --------------------------------------------------------------------------------

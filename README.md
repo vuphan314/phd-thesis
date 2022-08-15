@@ -1,12 +1,13 @@
-# DPMC/ProCount/DPO/DPER
+# Quantitative Reasoning on Hybrid Formulas with Dynamic Programming
+- This repository supplements Vu Phan's PhD thesis in Computer Science at Rice University.
 - We provide four exact solvers that support XOR-CNF formulas.
   - DPMC solves *weighted model counting (WMC)*.
   - ProCount solves *weighted projected model counting (WPMC)*.
-  - DPO solves *weighted SAT (WSAT)*, i.e., Boolean MPE.
+  - DPO solves *weighted SAT (WSAT)*, also called Boolean MPE.
   - DPER solves *exist-random SAT (ERSAT)*.
 - Each of these four solvers is a combination of a planner and an executor.
-  - A planner produces a **project-join tree** `T` from an XOR-CNF formula F.
-  - An executor traverses `T` to computes a solution of F.
+  - A planner produces a **project-join tree** `T` from an XOR-CNF formula `F`.
+  - An executor traverses `T` to computes a solution of `F`.
   - For WPMC and ERSAT, `T` must be **graded**.
 - Two planners are available.
   - [HTB](./htb/) uses constraint-programming heuristics.
@@ -14,15 +15,18 @@
 - Two executors are available.
   - [DMC](./dmc/) uses *algebraic decision diagrams (ADDs)*.
   - [Tensor](./tensor/) uses tensors and only solves WMC on pure CNF.
-- Developers:
-  - Vu Phan: HTB and DMC
-  - Jeffrey Dudek: LG and Tensor
+
+--------------------------------------------------------------------------------
+
+## Developers
+- Vu Phan: HTB and DMC
+- Jeffrey Dudek: LG and Tensor
 
 --------------------------------------------------------------------------------
 
 ## Cloning this repository
 ```bash
-https://github.com/vuphan314/phd-thesis
+git clone https://github.com/vuphan314/phd-thesis
 ```
 
 --------------------------------------------------------------------------------

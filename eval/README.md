@@ -1,7 +1,5 @@
 # Evaluation (Linux)
 
---------------------------------------------------------------------------------
-
 ## Benchmarks
 
 ### Downloading archive to this dir (`eval`)
@@ -61,12 +59,9 @@ unzip bin.zip
 
 --------------------------------------------------------------------------------
 
-## Examples
+## WMC examples
 
---------------------------------------------------------------------------------
-### WMC
-
-#### DPMC
+### DPMC
 ```bash
 ./wrapper.py --cf=../examples/flip_1_p_t2.cnf --vc=0 --vj=0
 ```
@@ -90,7 +85,7 @@ c ------------------------------------------------------------------
 c seconds                       0.157
 ```
 
-#### C2D
+### C2D
 ```bash
 ./wrapper.py --cf=../examples/flip_1_p_t2.cnf --prog=c2d
 ```
@@ -101,7 +96,7 @@ c
 c Total Time: 0.0s
 ```
 
-#### D4
+### D4
 ```bash
 ./wrapper.py --cf=../examples/flip_1_p_t2.cnf --prog=d4
 ```
@@ -114,7 +109,7 @@ c s log10-estimate -1.4406334943145431851433219504100391786793796759689
 c s exact quadruple int 0.0362548828125
 ```
 
-#### Cachet
+### Cachet
 ```bash
 ./wrapper.py --cf=../examples/flip_1_p_t2.cnf --prog=cachet
 ```
@@ -124,7 +119,7 @@ Total Run Time				0.0184
 Satisfying probability			0.0362549
 ```
 
-#### miniC2D
+### miniC2D
 ```bash
 ./wrapper.py --cf=../examples/flip_1_p_t2.cnf --prog=mini
 ```
@@ -158,9 +153,10 @@ Total Time: 0.040s
 ```
 
 --------------------------------------------------------------------------------
-### WSAT
 
-#### DPO
+## WSAT examples
+
+### DPO
 ```bash
 ./wrapper.py --cf=../examples/chain_k10_n20.xcnf --vc=0 --vj=0 --er=1
 ```
@@ -185,7 +181,7 @@ v 00000111001010001110
 c seconds                       0.175
 ```
 
-#### GaussMaxHS
+### GaussMaxHS
 ```bash
 ./wrapper.py --cf=../examples/chain_k10_n20.xcnf --prog=gauss --post=1
 ```
@@ -220,7 +216,7 @@ sol:1e+38
 o 22
 ```
 
-#### MaxHS
+### MaxHS
 ```bash
 ./wrapper.py --cf=../examples/chain_k10_n20.xcnf --prog=maxhs --post=1
 ```
@@ -257,7 +253,7 @@ sol:1e+38
 o 22
 ```
 
-#### UWrMaxSat
+### UWrMaxSat
 ```bash
 ./wrapper.py --cf=../examples/chain_k10_n20.xcnf --prog=uwr --post=1
 ```
@@ -282,9 +278,10 @@ o 22
 ```
 
 --------------------------------------------------------------------------------
-### WPMC
 
-#### ProCount
+## WPMC examples
+
+### ProCount
 ```bash
 ./wrapper.py --cf=../examples/s27_3_2-re.cnf --vc=0 --vj=0 --pc=1
 ```
@@ -308,7 +305,7 @@ c ------------------------------------------------------------------
 c seconds                       0.204
 ```
 
-#### D4p
+### D4p
 ```bash
 ./wrapper.py --cf=../examples/s27_3_2-re.cnf --prog=d4p
 ```
@@ -321,7 +318,7 @@ c s log10-estimate -0.25942836852589153125979968118256585700059767851413
 c s exact quadruple int 0.5502646723411869051101368345191515532610414133245
 ```
 
-#### projMC
+### projMC
 ```bash
 ./wrapper.py --cf=../examples/s27_3_2-re.cnf --prog=projmc
 ```
@@ -331,7 +328,7 @@ c
 s 0.550265
 ```
 
-#### reSSAT
+### reSSAT
 ```bash
 ./wrapper.py --cf=../examples/s27_3_2-re.cnf --prog=ressat
 ```
@@ -352,9 +349,10 @@ c wrapper tmpmb 0.000763
 ```
 
 --------------------------------------------------------------------------------
-### ERSAT
 
-#### DPER
+## ERSAT examples
+
+### DPER
 ```bash
 ./wrapper.py --cf=../examples/s27_3_2-er.cnf --vc=0 --vj=0 --pc=1 --er=1
 ```
@@ -379,7 +377,7 @@ v 11111111110010001111
 c seconds                       0.154
 ```
 
-#### erSSAT
+### erSSAT
 ```bash
 ./wrapper.py --cf=../examples/s27_3_2-er.cnf --prog=erssat
 ```
@@ -397,7 +395,7 @@ c wrapper tmpmb 0.000763
   > Time =     0.00 sec
 ```
 
-#### DC-SSAT
+### DC-SSAT
 ```bash
 ./wrapper.py --cf=../examples/s27_3_2-er.cnf --prog=dcssat
 ```
