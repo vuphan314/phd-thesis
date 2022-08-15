@@ -1,0 +1,43 @@
+p cnf 9 20
+
+
+
+
+c p weight -1 0.25 0
+c p weight  1 0.75 0
+c p weight -2 0.75 0
+c p weight  2 0.25 0
+c p weight -3 0.75 0
+c p weight  3 0.25 0
+c p weight -4 0.75 0
+c p weight  4 0.25 0
+c p weight -5 0.75 0
+c p weight  5 0.25 0
+c p weight -6 0.25 0
+c p weight  6 0.75 0
+c p weight -7 0.25 0
+c p weight  7 0.75 0
+c p weight -8 0.25 0
+c p weight  8 0.75 0
+c p weight -9 0.25 0
+c p weight  9 0.75 0
+  -1 -8 -4 0
+   1 -8  4 0
+  -4 -9 -7 0
+   4 -9  7 0
+  -1 -8  2 0
+  -2  1 0
+  -2  8 0
+   2 -1  4 0
+   1 -8  3 0
+  -3 -1 0
+  -3  8 0
+   3  1 -4 0
+  -4 -9  5 0
+  -5  4 0
+  -5  9 0
+   5 -4  7 0
+   4 -9  6 0
+  -6 -4 0
+  -6  9 0
+   6  4 -7 0
