@@ -27,6 +27,10 @@ https://github.com/vuphan314/phd-thesis
 
 --------------------------------------------------------------------------------
 
+## [Evaluation](./eval/)
+
+--------------------------------------------------------------------------------
+
 ## [Examples](./examples/)
 
 --------------------------------------------------------------------------------
@@ -39,7 +43,7 @@ https://github.com/vuphan314/phd-thesis
 - [CUDD package](https://github.com/ivmai/cudd): Somenzi
 - [CUDD visualization](https://davidkebo.com/cudd#cudd6): Kebo
 - [cxxopts](https://github.com/jarro2783/cxxopts): Beck
-- [DPMC](https://github.com/vardigroup/DPMC): Dudek, Phan, Vardi
+- [DPMC/ProCount/DPO/DPER](https://github.com/vardigroup/DPMC): Dudek, Phan, Vardi
 - [FlowCutter](https://github.com/kit-algo/flow-cutter-pace17): Strasser
 - [htd](https://github.com/mabseher/htd): Abseher, Musliu, Woltran
 - [miniC2D](http://reasoning.cs.ucla.edu/minic2d): Oztok, Darwiche
