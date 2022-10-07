@@ -1,5 +1,5 @@
 # Quantitative Reasoning on Hybrid Formulas with Dynamic Programming
-- This repository supplements Vu Phan's PhD thesis in Computer Science at Rice University.
+- This repository supplements Vu Phan's [PhD thesis](https://scholarship.rice.edu/handle/1911/113243) in Computer Science at Rice University.
 - We provide four exact solvers that support XOR-CNF formulas.
   - DPMC solves *weighted model counting (WMC)*.
   - ProCount solves *weighted projected model counting (WPMC)*.
